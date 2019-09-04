@@ -18,6 +18,7 @@ app.Animation = (function () {
 	var cta = document.getElementById('cta');
 	var curtain = document.getElementById('curtain');
 	var container = document.getElementsByClassName("container");
+	var resolve = document.getElementsByClassName("resolve");
 	
 
 	// --------------------------------------------------------------------------------------
@@ -25,6 +26,7 @@ app.Animation = (function () {
 	function initialize() {
 		// DO NOT EDIT: reveals banner once loaded
 		t.set(banner, {opacity:1});
+
 		t.set(cta, {transformOrigin: "50% 70%"});
 		t.set(container, {transformOrigin: "50% 50%"});
 	}
@@ -49,6 +51,8 @@ app.Animation = (function () {
 		.to(txt3b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
 		.to(curtain, .75, {opacity: 1, onComplete: function () {tl2.play();}}, "+=1.5")
+
+		.set(resolve, {display: "block"})
 
 		.from(container, .5, {scale:0, opacity: 0, ease: Sine.easeInOut})
 
